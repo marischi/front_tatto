@@ -15,15 +15,13 @@
   --gold-color: hsl(36, 66%, 53%);
 
   /*==== gradiente ====*/
-  --gradient1: linear-gradient(
-    to right bottom,
-    hsl(0, 0%, 5%),
-    hsl(38, 61%, 20%),
-    hsl(43, 70%, 35%),
-    hsl(44, 85%, 45%),
-    hsl(45, 90%, 50%),
-    hsl(45, 95%, 60%)
-  );
+  --gradient1: linear-gradient(to right bottom,
+      hsl(0, 0%, 5%),
+      hsl(38, 61%, 20%),
+      hsl(43, 70%, 35%),
+      hsl(44, 85%, 45%),
+      hsl(45, 90%, 50%),
+      hsl(45, 95%, 60%));
 
   /*====cor do texto ====*/
   --text-white: hsla(0, 0%, 100%, 1);
@@ -62,7 +60,8 @@
   --border-30: hsla(44, 74%, 39%, 0.3);
 
   /*==== sombra ====*/
-  --shadow: 0 0 20px rgba(0, 0, 0, 0.7); /*horizontal/vertical/desfoque/espelhamento*/
+  --shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  /*horizontal/vertical/desfoque/espelhamento*/
 
   /*==== transição ====*/
   --transition-1: 250ms ease;
@@ -120,7 +119,8 @@ button,
 textarea {
   background: none;
   border: none;
-  font: inherit; /*herda da div pai*/
+  font: inherit;
+  /*herda da div pai*/
 }
 
 input,
@@ -145,7 +145,8 @@ body {
   font-weight: var(--weight-regular);
   line-height: 1.6;
   overflow-x: hidden;
-  height: 10000px; /*apenas para mostrar a barra de rolagem*/
+  height: 10000px;
+  /*apenas para mostrar a barra de rolagem*/
 }
 
 :focus-visible {
@@ -268,6 +269,7 @@ body {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -278,7 +280,7 @@ body {
   right: 12px;
   left: 12px;
   background: var(--black-color-light);
-  padding: 0 15px;  
+  padding: 0 15px;
 }
 
 .navbar-link {
@@ -331,7 +333,7 @@ body {
   background-color: var(--bg-color);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
-  min-width: 180px;
+  min-width: 250px;
   flex-direction: column;
   padding: 0.5rem 0;
   z-index: 10;
@@ -416,6 +418,7 @@ body {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -451,7 +454,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width: 100%;
- /*gap: 10px;*/
+  gap: 10px;
 }
 
 .section {
@@ -526,6 +529,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -553,4 +557,143 @@ body {
 
 #estudio {
   scroll-margin-top: 130px;
+}
+
+/*SERVIÇOS*/
+.service-banner {
+  display: block;
+  grid-column: 2 / 3; /*2 colunas*/
+  grid-row: 1 / 4;  /*3 linhas*/
+  align-self: center;
+}
+
+.service {
+  padding-block-end: 0;
+}
+
+.container-serv {
+  padding-inline: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-list {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-icon {
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+.service .section-title {
+  margin-block-end: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card-text {
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+.service-card .card-title {
+  font-size: 32px;
+  margin-block-end: 8px;
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  min-height: 100%;
+  border: 1px solid var(--gold-color);
+  border-radius: var(--radius-5);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(141, 140, 140, 0.15);
+}
+
+/*LOGIN*/
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--black-color);
+}
+
+.wrapper {
+  position: relative;
+  width: 750px;
+  height: 450px;
+  background: transparent;
+  border: 2px solid var(--gold-color);
+}
+
+.wrapper .form-box {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: red;
+}
+
+.form-box h2 {
+  font-size: var(--fs-2);
+  color: var(--white-color);
+  text-align: center;
+}
+
+.form-box .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 25px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border-bottom: 2px solid var(--white-color);
+  color: var(--white-color);
+  font-size: 16px;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 16px;
+  color: var(--white-color);
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+.input-box ion-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 18px;
+  color: var(--white-color);
+  transform: translateY(-50%);
+  transition: 0.5s;
 }
